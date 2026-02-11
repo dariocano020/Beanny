@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Opcional: permitir scroll una vez cargado
         document.body.style.overflowY = 'auto'; 
     }
-}, 3500);
+}, 3400);
 
     // 2. Cursor Pro logic
     const cursor = document.getElementById('custom-cursor');
