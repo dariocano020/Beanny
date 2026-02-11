@@ -18,5 +18,15 @@
         </header>
 
         
+    
+    <script>
+        const cursor = document.getElementById('cursor-capsulas');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+
+        
 </body>
 </html>
