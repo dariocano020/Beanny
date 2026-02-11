@@ -82,6 +82,41 @@
             </article>
 
 
+             </div>
+    </main>
+
+    <aside id="tea-cart-sidebar" class="cart-sidebar">
+        <h2 id="cart-title">TU CARRITO</h2>
+        <div id="cart-item-preview" class="cart-item-ui">
+            <p id="empty-cart-msg">No hay granos seleccionados.</p>
+        </div>
+        <button id="close-cart-btn" class="btn-primary-v2" onclick="toggleCart()">CERRAR</button>
+    </aside>
+
+    <script>
+        // Cursor personalizado
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Lógica del Loader (Taza llenándose)
+        window.addEventListener('load', () => {
+            document.getElementById('liquid-fill').style.height = "100%";
+            setTimeout(() => {
+                document.getElementById('main-loader').style.transform = "translateY(-100%)";
+            }, 1000);
+        });
+
+        // Función del Carrito
+        function toggleCart() {
+            document.getElementById('tea-cart-sidebar').classList.toggle('active');
+        }
+    </script>
+
+
+
 
 
 
