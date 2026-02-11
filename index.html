@@ -2,38 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beanywood | Home</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Inline&family=Space+Grotesk:wght@300;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loader"><div class="cartoon-coffee"><div class="liquid"></div></div></div>
+    <div id="loader">
+        <div class="particles" id="particles"></div>
+        <div class="loader-content">
+            <div class="cartoon-coffee">
+                <div class="liquid"></div>
+            </div>
+            <h2 class="loader-text">TOSTANDO...</h2>
+        </div>
+    </div>
+
     <div id="custom-cursor"></div>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">BEANYWOOD</a>
-            <nav>
-                <a href="cafe.html">CAFÉS</a>
-                <a href="tes.html">TÉS</a>
-                <a href="#" onclick="toggleCart()">BOLSA (<span id="cart-counter">0</span>)</a>
-            </nav>
-        </div>
-    </header>
+   <header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">BEANYWOOD</a>
+        
+        <nav class="main-nav">
+            <a href="cafe.html" class="nav-item hover-target">CAFÉS</a>
+            <a href="te.html" class="nav-item hover-target">TÉS</a>
+            <a href="#" onclick="toggleCart()" class="nav-item cart-btn hover-target">
+                BOLSA <span class="cart-badge">[<span id="cart-counter">0</span>]</span>
+            </a>
+        </nav>
+    </div>
+</header>
 
-    <section class="content-wrapper" style="text-align:center; padding-top:100px;">
-        <h1 style="font-family:'Bungee Inline'; font-size:4rem;">BIENVENIDO AL <br>UNIVERSO BEANY</h1>
-        <p style="font-size:1.5rem; margin-top:20px;">Selecciona una categoría arriba para empezar.</p>
-    </section>
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="main-title">BIENVENIDO AL</h1>
+        <h2 class="sub-title">UNIVERSO BEANY</h2>
+        <p class="hero-tagline">Tu dosis diaria de cafeína con estilo.</p>
+    </div>
+</section>
+
+   
 
     <aside id="sidebar-cart" class="cart-sidebar">
-        <h2 style="font-family:'Bungee Inline';">TU BOLSA</h2>
+        <div class="cart-header">
+            <h2>TU BOLSA</h2>
+            <button onclick="toggleCart()" class="close-btn">&times;</button>
+        </div>
         <div id="cart-items-container"></div>
-        <h3 style="margin-top:20px;">TOTAL: <span id="total-amount">0.00€</span></h3>
-        <button class="btn-primary-v2" style="width:100%; margin-top:20px;">PAGAR</button>
-        <button onclick="toggleCart()" style="margin-top:10px; background:none; border:none; cursor:pointer;">Cerrar</button>
+        <div class="cart-footer">
+            <h3>TOTAL: <span id="total-amount">0.00€</span></h3>
+            <button class="btn-checkout">FINALIZAR COMPRA</button>
+        </div>
     </aside>
 
-    <script src="/java/script.js"></script>
+    <script src="java/script.js"></script>
 </body>
 </html>
