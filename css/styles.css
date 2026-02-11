@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
     --primary: #4e342e;
     /* Marrón Espresso */
     --secondary: #1a1a1a;
@@ -184,3 +185,144 @@ nav a:hover {
     border-bottom: 1px solid #eee;
 }
 
+=======
+    --primary-cap: #8d6e63;      /* Marrón claro/Cobre para resaltar */
+    --secondary-cap: #1a1a1a;    /* Negro puro */
+    --accent-cap: #d7ccc8;       /* Beige para textos */
+    --bg-dark-cap: #12100e;      /* Fondo casi negro con matiz café */
+    --card-bg-cap: #1e1b18;      /* Marrón muy oscuro para las tarjetas */
+    --text-main-cap: #f5f5f1;    /* Crema claro para lectura */
+    --shadow-cap: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --step-ani-cap: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Base */
+#body-capsulas {
+    background: var(--bg-dark-cap);
+    color: var(--text-main-cap);
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Cursor Único (con inversión para que brille en el fondo oscuro) */
+#cursor-capsulas {
+    width: 25px;
+    height: 25px;
+    background: var(--accent-cap);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+}
+
+/* Layout */
+#main-container-capsulas {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+#header-tienda-capsulas {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#logo-texto-capsulas {
+    font-family: 'Bungee Shade';
+    color: var(--primary-cap);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px var(--secondary-cap);
+}
+
+#subtitulo-capsulas {
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--accent-cap);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Grid de productos */
+#galeria-capsulas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Cards Estilo Cápsula Dark */
+#card-producto-1, #card-producto-2, #card-producto-3, #card-producto-4, #card-producto-5 {
+    background: var(--card-bg-cap);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: var(--shadow-cap);
+    text-align: center;
+    transition: 0.4s var(--step-ani-cap);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+#card-producto-1:hover, #card-producto-2:hover, #card-producto-3:hover, #card-producto-4:hover, #card-producto-5:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--primary-cap);
+    background: #25211e;
+}
+
+/* Imágenes únicas con filtro suave para encajar en el tema dark */
+#img-capsula-1, #img-capsula-2, #img-capsula-3, #img-capsula-4, #img-capsula-5 {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background: var(--secondary-cap);
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Textos de producto */
+#titulo-capsula-1, #titulo-capsula-2, #titulo-capsula-3, #titulo-capsula-4, #titulo-capsula-5 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--accent-cap);
+}
+
+#desc-capsula-1, #desc-capsula-2, #desc-capsula-3, #desc-capsula-4, #desc-capsula-5 {
+    font-size: 0.9rem;
+    color: #a1887f; /* Color café suave para la descripción */
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 1.4;
+}
+
+#precio-capsula-1, #precio-capsula-2, #precio-capsula-3, #precio-capsula-4, #precio-capsula-5 {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-cap);
+    margin-bottom: 25px;
+}
+
+/* Botones únicos */
+#btn-compra-1, #btn-compra-2, #btn-compra-3, #btn-compra-4, #btn-compra-5 {
+    background: var(--primary-cap);
+    color: var(--secondary-cap);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px; /* Un poco menos redondeado para look más rudo */
+    font-weight: 900;
+    width: 100%;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+#btn-compra-1:hover, #btn-compra-2:hover, #btn-compra-3:hover, #btn-compra-4:hover, #btn-compra-5:hover {
+    background: var(--text-main-cap);
+    color: var(--secondary-cap);
+    box-shadow: 0 0 20px rgba(141, 110, 99, 0.4);
+    transform: translateY(-2px);
+}
+>>>>>>> capsulas
