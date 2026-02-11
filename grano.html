@@ -88,14 +88,12 @@
     </aside>
 
     <script>
-        // Cursor personalizado
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Lógica del Loader (Taza llenándose)
         window.addEventListener('load', () => {
             document.getElementById('liquid-fill').style.height = "100%";
             setTimeout(() => {
@@ -103,7 +101,6 @@
             }, 1000);
         });
 
-        // Función del Carrito
         function toggleCart() {
             document.getElementById('tea-cart-sidebar').classList.toggle('active');
         }
