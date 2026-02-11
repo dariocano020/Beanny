@@ -3,9 +3,13 @@ let CART = JSON.parse(localStorage.getItem('beany_cart')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Loader Logic
     setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if(loader) loader.style.transform = 'translateY(-100%)';
-    }, 2500);
+    const loader = document.getElementById('loader');
+    if(loader) {
+        loader.style.transform = 'translateY(-100%)';
+        // Opcional: permitir scroll una vez cargado
+        document.body.style.overflowY = 'auto'; 
+    }
+}, 3500);
 
     // 2. Cursor Pro logic
     const cursor = document.getElementById('custom-cursor');
