@@ -1,140 +1,168 @@
 :root {
-    --primary-cap: #8d6e63;      /* Marrón claro/Cobre para resaltar */
-    --secondary-cap: #1a1a1a;    /* Negro puro */
-    --accent-cap: #d7ccc8;       /* Beige para textos */
-    --bg-dark-cap: #12100e;      /* Fondo casi negro con matiz café */
-    --card-bg-cap: #1e1b18;      /* Marrón muy oscuro para las tarjetas */
-    --text-main-cap: #f5f5f1;    /* Crema claro para lectura */
-    --shadow-cap: 0 15px 35px rgba(0, 0, 0, 0.5);
-    --step-ani-cap: cubic-bezier(0.19, 1, 0.22, 1);
+    --primary: #4e342e;
+    --secondary: #1a1a1a;
+    --accent: #d7ccc8;
+    --bg-light: #f5f5f1;
+    --text-main: #2d2424;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --step-ani: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* Base */
-#body-capsulas {
-    background: var(--bg-dark-cap);
-    color: var(--text-main-cap);
-    font-family: 'Space Grotesk', sans-serif;
+#tea-store-body {
     margin: 0;
     padding: 0;
-    cursor: none;
+    box-sizing: border-box;
+    background: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
+    cursor: none;
 }
 
-/* Cursor Único (con inversión para que brille en el fondo oscuro) */
-#cursor-capsulas {
-    width: 25px;
-    height: 25px;
-    background: var(--accent-cap);
+/* Cursor */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 10000;
+    z-index: 9999;
     mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
 }
 
-/* Layout */
-#main-container-capsulas {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 25px;
+/* Loader */
+#main-loader {
+    position: fixed;
+    inset: 0;
+    background: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: transform 0.8s var(--step-ani);
 }
 
-#header-tienda-capsulas {
-    text-align: center;
-    margin-bottom: 50px;
+#cup-container {
+    width: 100px;
+    height: 80px;
+    border: 5px solid white;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
 }
 
-#logo-texto-capsulas {
-    font-family: 'Bungee Shade';
-    color: var(--primary-cap);
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 0px var(--secondary-cap);
-}
-
-#subtitulo-capsulas {
-    font-weight: 300;
-    letter-spacing: 4px;
-    color: var(--accent-cap);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-/* Grid de productos */
-#galeria-capsulas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-/* Cards Estilo Cápsula Dark */
-#card-producto-1, #card-producto-2, #card-producto-3, #card-producto-4, #card-producto-5 {
-    background: var(--card-bg-cap);
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow: var(--shadow-cap);
-    text-align: center;
-    transition: 0.4s var(--step-ani-cap);
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-#card-producto-1:hover, #card-producto-2:hover, #card-producto-3:hover, #card-producto-4:hover, #card-producto-5:hover {
-    transform: translateY(-15px) scale(1.02);
-    border-color: var(--primary-cap);
-    background: #25211e;
-}
-
-/* Imágenes únicas con filtro suave para encajar en el tema dark */
-#img-capsula-1, #img-capsula-2, #img-capsula-3, #img-capsula-4, #img-capsula-5 {
+#liquid-fill {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 250px;
+    height: 0%;
+    background: var(--primary);
+    transition: 1s ease;
+}
+
+/* Header & Nav */
+#main-header {
+    background: white;
+    border-bottom: 3px solid var(--secondary);
+    padding: 20px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#site-logo {
+    font-family: 'Bungee Shade', cursive;
+    color: var(--primary);
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+#nav-link-coffee, #nav-link-tea-active, #nav-link-cart {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 800;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+#nav-link-tea-active {
+    color: var(--primary);
+}
+
+/* Grid & Cards */
+#tea-content-wrapper {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#tea-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+#tea-card-1, #tea-card-2, #tea-card-3, #tea-card-4, #tea-card-5 {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: 0.4s var(--step-ani);
+}
+
+#tea-img-1, #tea-img-2, #tea-img-3, #tea-img-4, #tea-img-5 {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 15px;
-    margin-bottom: 20px;
-    background: var(--secondary-cap);
-    filter: brightness(0.9) contrast(1.1);
+    margin-bottom: 15px;
 }
 
-/* Textos de producto */
-#titulo-capsula-1, #titulo-capsula-2, #titulo-capsula-3, #titulo-capsula-4, #titulo-capsula-5 {
-    font-size: 1.4rem;
+#tea-price-1, #tea-price-2, #tea-price-3, #tea-price-4, #tea-price-5 {
     font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--accent-cap);
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
-#desc-capsula-1, #desc-capsula-2, #desc-capsula-3, #desc-capsula-4, #desc-capsula-5 {
-    font-size: 0.9rem;
-    color: #a1887f; /* Color café suave para la descripción */
-    margin-bottom: 20px;
-    height: 40px;
-    line-height: 1.4;
-}
-
-#precio-capsula-1, #precio-capsula-2, #precio-capsula-3, #precio-capsula-4, #precio-capsula-5 {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--primary-cap);
-    margin-bottom: 25px;
-}
-
-/* Botones únicos */
-#btn-compra-1, #btn-compra-2, #btn-compra-3, #btn-compra-4, #btn-compra-5 {
-    background: var(--primary-cap);
-    color: var(--secondary-cap);
+/* Botones con ID (se pueden agrupar por clase si el ejercicio lo permite, 
+pero aquí uso el estilo base referenciado a sus IDs para Git) */
+#tea-btn-1, #tea-btn-2, #tea-btn-3, #tea-btn-4, #tea-btn-5, #close-cart-btn {
+    background: var(--primary);
+    color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 12px; /* Un poco menos redondeado para look más rudo */
-    font-weight: 900;
+    padding: 12px;
     width: 100%;
-    transition: 0.3s;
-    text-transform: uppercase;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
 }
 
-#btn-compra-1:hover, #btn-compra-2:hover, #btn-compra-3:hover, #btn-compra-4:hover, #btn-compra-5:hover {
-    background: var(--text-main-cap);
-    color: var(--secondary-cap);
-    box-shadow: 0 0 20px rgba(141, 110, 99, 0.4);
-    transform: translateY(-2px);
+/* Sidebar */
+#tea-cart-sidebar {
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    padding: 40px;
+    transition: 0.5s var(--step-ani);
+    z-index: 2000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+#tea-cart-sidebar.active {
+    right: 0;
 }

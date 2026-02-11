@@ -3,71 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cápsulas Espresso - Tienda</title>
+    <title>Tea Specialty Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Space+Grotesk:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
-<body id="body-capsulas">
+<body id="tea-store-body">
 
-    <div id="cursor-capsulas"></div>
+    <div id="custom-cursor"></div>
 
-    <main id="main-container-capsulas">
-        <header id="header-tienda-capsulas">
-            <h1 id="logo-texto-capsulas">Tienda</h1>
-            <p id="subtitulo-capsulas">Selección premium compatible con Espresso</p>
-        </header>
+    <div id="main-loader">
+        <div id="cup-container" class="cartoon-coffee">
+            <div id="liquid-fill" class="liquid"></div>
+        </div>
+    </div>
 
-                <section id="galeria-capsulas-grid">
-            <article id="card-producto-1" class="capsula-card-style">
-                <img id="img-capsula-1" src="img/capsula1.jpg" alt="Intenso">
-                <h3 id="titulo-capsula-1">Intenso Roast</h3>
-                <p id="desc-capsula-1">Intensidad 10/12. Notas de cacao amargo.</p>
-                <span id="precio-capsula-1">5,50€</span>
-                <button id="btn-compra-1">AÑADIR AL PACK</button>
+    <header id="main-header">
+        <div id="header-container" class="nav-container">
+            <a href="index.html" id="site-logo" class="logo">BEANYWOOD</a>
+            <nav id="main-navigation">
+                <a href="#" id="nav-link-coffee">CAFÉ</a>
+                <a href="#" id="nav-link-tea-active">TÉ</a>
+                <a href="#" id="nav-link-cart" onclick="toggleCart()">CARRITO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="tea-content-wrapper" class="content-wrapper">
+        <h1 id="section-title">Nuestra Selección de Té</h1>
+
+        <div id="tea-products-grid" class="product-gallery">
+            
+            <article id="tea-card-1" class="p-card">
+                <img id="tea-img-1" src="img/Te_Matcha.jpg" alt="Matcha">
+                <h3 id="tea-title-1">Matcha Ceremonial</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">Polvo fino de té verde japonés. Sabor umami intenso y alta carga de antioxidantes.</p>
+                <p id="tea-price-1">19.00€</p>
+                <button id="tea-btn-1" class="btn-primary-v2">AÑADIR</button>
             </article>
 
-            <article id="card-producto-2" class="capsula-card-style">
-                <img id="img-capsula-2" src="img/capsulas2.jpg" alt="Decaf">
-                <h3 id="titulo-capsula-2">Velvet Decaf</h3>
-                <p id="desc-capsula-2">Sin cafeína, aroma a cereales tostados.</p>
-                <span id="precio-capsula-2">5,90€</span>
-                <button id="btn-compra-2">AÑADIR AL PACK</button>
+            <article id="tea-card-2" class="p-card">
+                <img id="tea-img-2" src="img/Te_Earl.jpg" alt="Earl Grey">
+                <h3 id="tea-title-2">Earl Grey Superior</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">Té negro premium aromatizado con aceite esencial de bergamota cítrica.</p>
+                <p id="tea-price-2">12.50€</p>
+                <button id="tea-btn-2" class="btn-primary-v2">AÑADIR</button>
             </article>
+            <article id="tea-card-3" class="p-card">
+        <img id="tea-img-3" src="img/Te_Perlas.jpg" alt="Té de Jazmín">
+        <h3 id="tea-title-3">Perlas de Jazmín Dragón</h3>
+        <p style="margin: 10px 0; font-size: 0.9rem;">Hojas enrolladas a mano y aromatizadas naturalmente.</p>
+        <p id="tea-price-3">22.00€</p>
+        <button id="tea-btn-3" class="btn-primary-v2">AÑADIR</button>
+    </article>
+           <article id="tea-card-4" class="p-card">
+        <img id="tea-img-4" src="img/Te_Rooibos.jpg" alt="Rooibos">
+        <h3 id="tea-title-4">Rooibos Vanilla Sunset</h3>
+        <p style="margin: 10px 0; font-size: 0.9rem;">Sin cafeína. Con trozos de vainilla de Madagascar.</p>
+        <p id="tea-price-4">9.50€</p>
+        <button id="tea-btn-4" class="btn-primary-v2">AÑADIR</button>
+    </article>
+           <article id="tea-card-5" class="p-card">
+        <img id="tea-img-5" src="img/Te_Masala.jpg" alt="Chai Tea">
+        <h3 id="tea-title-5">Masala Chai Auténtico</h3>
+        <p style="margin: 10px 0; font-size: 0.9rem;">Mezcla especiada con canela, cardamomo y clavo.</p>
+        <p id="tea-price-5">14.20€</p>
+        <button id="tea-btn-5" class="btn-primary-v2">AÑADIR</button>
+    </article>
 
-            <article id="card-producto-3" class="capsula-card-style">
-                <img id="img-capsula-3" src="img/capsulas3.jpg" alt="Lungo">
-                <h3 id="titulo-capsula-3">Golden Lungo</h3>
-                <p id="desc-capsula-3">Cuerpo sedoso y final de miel silvestre.</p>
-                <span id="precio-capsula-3">6,20€</span>
-                <button id="btn-compra-3">AÑADIR AL PACK</button>
-            </article>
-
-            <article id="card-producto-4" class="capsula-card-style">
-                <img id="img-capsula-4" src="img/capsulas4.jpg" alt="Etiopía">
-                <h3 id="titulo-capsula-4">Origin Etiopía</h3>
-                <p id="desc-capsula-4">Edición limitada. Floral y afrutado.</p>
-                <span id="precio-capsula-4">7,50€</span>
-                <button id="btn-compra-4">AÑADIR AL PACK</button>
-            </article>
-
-            <article id="card-producto-5" class="capsula-card-style">
-                <img id="img-capsula-5" src="img/capsulas5.jpg" alt="Vainilla">
-                <h3 id="titulo-capsula-5">Sweet Vanilla</h3>
-                <p id="desc-capsula-5">Café aromatizado con extracto natural.</p>
-                <span id="precio-capsula-5">6,00€</span>
-                <button id="btn-compra-5">AÑADIR AL PACK</button>
-            </article>
-        </section>
+        </div>
     </main>
-    
+
+    <aside id="tea-cart-sidebar" class="cart-sidebar">
+        <h2 id="cart-title">TU CARRITO</h2>
+        <div id="cart-item-preview" class="cart-item-ui">
+            <p id="empty-cart-msg">No hay productos aún.</p>
+        </div>
+        <button id="close-cart-btn" class="btn-primary-v2" onclick="toggleCart()">CERRAR</button>
+    </aside>
+
     <script>
-        const cursor = document.getElementById('cursor-capsulas');
+        const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-    </script>
 
-        
+        window.addEventListener('load', () => {
+            document.getElementById('liquid-fill').style.height = "100%";
+            setTimeout(() => {
+                document.getElementById('main-loader').style.transform = "translateY(-100%)";
+            }, 1000);
+        });
+
+        function toggleCart() {
+            document.getElementById('tea-cart-sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
