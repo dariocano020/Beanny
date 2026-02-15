@@ -53,3 +53,32 @@
 <img id="tea-img-4" src="img/helado_4.png" alt="Helado Pistacho">
 <img id="tea-img-5" src="img/helado_5.png" alt="Helado Mango">
 
+
+<aside id="tea-cart-sidebar" class="cart-sidebar">
+    <h2 id="cart-title">TU CARRITO</h2>
+    <div id="cart-item-preview" class="cart-item-ui">
+        <p id="empty-cart-msg">No hay productos seleccionados.</p>
+    </div>
+    <button id="close-cart-btn" class="btn-primary-v2" onclick="toggleCart()">CERRAR</button>
+</aside>
+
+<script>
+    const cursor = document.getElementById('custom-cursor');
+
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    window.addEventListener('load', () => {
+        document.getElementById('liquid-fill').style.height = "100%";
+        setTimeout(() => {
+            document.getElementById('main-loader').style.transform = "translateY(-100%)";
+        }, 1000);
+    });
+
+    function toggleCart() {
+        document.getElementById('tea-cart-sidebar').classList.toggle('active');
+    }
+</script>
+
