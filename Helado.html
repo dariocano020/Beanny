@@ -1,14 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Helados</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helados Premium | Beanywood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Space+Grotesk:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <h1>Helados</h1>
+
+<body id="tea-store-body">
+
+    <div id="custom-cursor"></div>
+
+    <div id="main-loader">
+        <div id="cup-container" class="cartoon-coffee">
+            <div id="liquid-fill" class="liquid"></div>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <div id="header-container" class="nav-container">
+            <a href="index.html" id="site-logo" class="logo">BEANYWOOD</a>
+            <nav id="main-navigation">
+                <a href="cafe.html" id="nav-link-coffee">CAFÉ</a>
+                <a href="tea.html" id="nav-link-tea-active">TÉ</a>
+                <a href="#" id="nav-link-cart" onclick="toggleCart()">CARRITO</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="tea-content-wrapper" class="content-wrapper">
+        
+        <h1 id="section-title" style="text-align:center; margin-bottom:40px;">
+            Helados Artesanales Premium
+        </h1>
+
+        <div id="tea-products-grid" class="product-gallery">
+            
+            <article id="tea-card-1" class="p-card">
+                <img id="tea-img-1" src="img/helado_1.png" alt="Helado Vainilla">
+                <h3 id="tea-title-1">Vainilla Bourbon</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">
+                    Cremoso, suave y elaborado con auténtica vainilla Bourbon.
+                </p>
+                <p id="tea-price-1">4.50€</p>
+                <button id="tea-btn-1" class="btn-primary-v2">AÑADIR</button>
+            </article>
+
+            <article id="tea-card-2" class="p-card">
+                <img id="tea-img-2" src="img/helado_2.png" alt="Helado Chocolate">
+                <h3 id="tea-title-2">Chocolate Intenso 80%</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">
+                    Sabor profundo con cacao premium y textura densa.
+                </p>
+                <p id="tea-price-2">5.00€</p>
+                <button id="tea-btn-2" class="btn-primary-v2">AÑADIR</button>
+            </article>
+
+            <article id="tea-card-3" class="p-card">
+                <img id="tea-img-3" src="img/helado_3.png" alt="Helado Fresa">
+                <h3 id="tea-title-3">Fresa Natural</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">
+                    Elaborado con fresas frescas y sin colorantes.
+                </p>
+                <p id="tea-price-3">4.20€</p>
+                <button id="tea-btn-3" class="btn-primary-v2">AÑADIR</button>
+            </article>
+
+            <article id="tea-card-4" class="p-card">
+                <img id="tea-img-4" src="img/helado_4.png" alt="Helado Pistacho">
+                <h3 id="tea-title-4">Pistacho Siciliano</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">
+                    Pistacho 100% natural con sabor auténtico y cremoso.
+                </p>
+                <p id="tea-price-4">5.50€</p>
+                <button id="tea-btn-4" class="btn-primary-v2">AÑADIR</button>
+            </article>
+
+            <article id="tea-card-5" class="p-card">
+                <img id="tea-img-5" src="img/helado_5.png" alt="Helado Mango">
+                <h3 id="tea-title-5">Mango Tropical</h3>
+                <p style="margin: 10px 0; font-size: 0.9rem;">
+                    Refrescante, dulce y elaborado con mango maduro.
+                </p>
+                <p id="tea-price-5">4.80€</p>
+                <button id="tea-btn-5" class="btn-primary-v2">AÑADIR</button>
+            </article>
+
+        </div>
+    </main>
+
+    <aside id="tea-cart-sidebar" class="cart-sidebar">
+        <h2 id="cart-title">TU CARRITO</h2>
+        <div id="cart-item-preview" class="cart-item-ui">
+            <p id="empty-cart-msg">No hay productos seleccionados.</p>
+        </div>
+        <button id="close-cart-btn" class="btn-primary-v2" onclick="toggleCart()">CERRAR</button>
+    </aside>
+
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        window.addEventListener('load', () => {
+            document.getElementById('liquid-fill').style.height = "100%";
+            setTimeout(() => {
+                document.getElementById('main-loader').style.transform = "translateY(-100%)";
+            }, 1000);
+        });
+
+        function toggleCart() {
+            document.getElementById('tea-cart-sidebar').classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
+
+
